@@ -18,8 +18,8 @@ jobs:
             TAG=$(echo ${GITHUB_SHA::7})
           fi
           IMAGE=${{ secrets.DOCKERHUB_REPOSITORY }}
-          echo "{tagged_image}={${IMAGE}:${TAG}}" >> "$GITHUB_ENV"
-          echo "{tag}={${TAG}}" >> "$GITHUB_ENV"
+          echo "tagged_image=${IMAGE}:${TAG}" >> "$GITHUB_ENV"
+          echo "tag=${TAG}" >> "$GITHUB_ENV"
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
